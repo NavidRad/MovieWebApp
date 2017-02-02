@@ -1,0 +1,27 @@
+<div class="row" ng-show="tvshowsearch">
+    <div class="alert alert-danger" ng-show="error">
+        <strong>Error!</strong> {{error}}
+    </div>
+    <div class="col-lg-6" ng-repeat="searchedTvShow in allTvShows|searchFor:search">
+        <div class="thumbnail" style="height:500px;">
+            <a ui-sref="tvshow_detail({id: searchedTvShow.id})">
+                <img ng-src="http://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ searchedTvShow.poster_path }}" alt="{{ searchedTvShow.title }}" style="height:400px; width:100%" />
+            </a>
+            <h3 style="font-style:italic; font-weight:bold; text-align: center;">{{ searchedTvShow.title }}</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-hide="tvshowsearch">
+    <div class="alert alert-danger" ng-show="error">
+        <strong>Error!</strong> {{error}}
+    </div>
+    <div class="col-lg-6" ng-repeat="tvshow in tvshows|limitTo:10">
+        <div class="thumbnail" style="height:500px;">
+            <a ui-sref="tvshow_detail({id: tvshow.id})">
+                <img ng-src="http://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ tvshow.poster_path }}" alt="{{ tvshow.name }}" style="height:400px; width:100%" />
+            </a>
+            <h3 style="font-style:italic; font-weight:bold; text-align: center;">{{ tvshow.name }}</h3>
+        </div>
+    </div>
+</div>

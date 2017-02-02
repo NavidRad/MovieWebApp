@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <base href="/">
+        <!-- bootsrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    </head>
+    <body ng-app="myApp" background="images/1.jpg">
+        <div class="container">
+            <div class="navbar navbar-inverse" role="navigation" style="margin-top:10px;">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="home">Movie Web App</a></li>
+                </ul>
+            </div>
+            <div ui-view></div>
+        </div>
+
+        <!-- anuglar -->
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-ui-router.min.js"></script>
+
+        <!-- Modules -->
+        <script src="app.js"></script>
+
+        <!-- Controllers -->
+        <script src="controllers/moviesController.js"></script>
+        <script src="controllers/tvshowsController.js"></script>
+        <script src="controllers/movieController.js"></script>
+        <script src="controllers/tvshowController.js"></script>
+
+        <!-- Directives -->
+        <script src="directives/movieDirective.js"></script>
+        <script src="directives/tvShowDirective.js"></script>
+
+        <!-- Filters -->
+        <script src="filters/searchFor.js"></script>
+
+        <!-- Services -->
+        <script src="services/focus.js"></script>
+        
+    </body>
+</html>

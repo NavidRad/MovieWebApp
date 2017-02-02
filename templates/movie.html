@@ -1,0 +1,16 @@
+<a ui-sref="home.movies" class="btn btn-warning" style="margin-bottom:20px;">Back</a>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="thumbnail">
+                <img src="http://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.title }}" style="height:400px; width:600px;" />
+                <h3 style="font-style:italic; font-weight:bold; text-align: center;">{{ movie.title }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-bottom:120px; color:white;">
+    <span style="font-weight:bold">Movie Overview:</span>
+    <p>{{ movie.overview }}</p>
+</div>

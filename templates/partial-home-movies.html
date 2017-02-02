@@ -1,0 +1,27 @@
+<div class="row" ng-show="moviesearch">
+    <div class="alert alert-danger" ng-show="error">
+        <strong>Error!</strong> {{error}}
+    </div>
+    <div class="col-lg-6" ng-repeat="searchedMovie in allMovies|searchFor:search">
+        <div class="thumbnail" style="height:500px;">
+            <a ui-sref="movie_detail({id: searchedMovie.id})">
+                <img ng-src="http://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ searchedMovie.poster_path }}" alt="{{ searchedMovie.title }}" style="height:400px; width:100%" />
+            </a>
+            <h3 style="font-style:italic; font-weight:bold; text-align: center;">{{ searchedMovie.title }}</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-hide="moviesearch">
+    <div class="alert alert-danger" ng-show="error">
+        <strong>Error!</strong> {{error}}
+    </div>
+    <div class="col-lg-6" ng-repeat="movie in movies|limitTo:10">
+        <div class="thumbnail" style="height:500px;">
+            <a ui-sref="movie_detail({id: movie.id})">
+                <img ng-src="http://image.tmdb.org/t/p/w300_and_h450_bestv2/{{ movie.poster_path }}" alt="{{ movie.title }}" style="height:400px; width:100%" />
+            </a>
+            <h3 style="font-style:italic; font-weight:bold; text-align: center;">{{ movie.title }}</h3>
+        </div>
+    </div>
+</div>
